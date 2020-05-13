@@ -1,0 +1,16 @@
+DATA: FILE IS D:\brainbnu\spm12_scripts_ying\Wald test\trait_scl.txt;
+variable: 
+names are group a b;
+usevariable = group a b;
+grouping is group (0=CSm 1=CSp);
+model:
+b on a(x1);
+
+model CSp:
+b on a(x2);
+
+model test:
+x1=x2;
+
+
+output: samp standardized modindices(4);
